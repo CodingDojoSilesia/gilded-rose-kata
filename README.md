@@ -1,5 +1,4 @@
-Gilded Rose Requirements Specification
-======================================
+# Gilded Rose Requirements Specification
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
 prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods.
@@ -35,3 +34,16 @@ for you).
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a
 legendary item and as such its Quality is 80 and it never alters.
+
+## How to run tests
+
+### Install dependencies
+
+    python3 -m venv rose-venv
+    source rose-venv/bin/activate
+    pip install --user -r requirements.txt
+    pytest tests.py
+
+### if you have pipenv
+
+    pipenv run pytest tests.py
