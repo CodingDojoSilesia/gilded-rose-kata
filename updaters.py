@@ -20,10 +20,12 @@ class RegularUpdater(AbstractUpdater):
 
     @staticmethod
     def tick(item):
-        if item.sell_in <= 0:
-            item.quality -= 2
-        else:
-            item.quality -= 1
+        coeff = max(min(item.sell_in, 1), 0)
+        item.quality -= (coeff * 1 + (1 - coeff) * 2)
+        # if item.sell_in <= 0:
+        #     item.quality -= 2
+        # else:
+        #     item.quality -= 1
         item.quality = max(0, item.quality)
         item.sell_in -= 1
 
@@ -32,10 +34,12 @@ class AgedBrieUpdater(AbstractUpdater):
 
     @staticmethod
     def tick(item):
-        if item.sell_in <= 0:
-            item.quality += 2
-        else:
-            item.quality += 1
+        coeff = max(min(item.sell_in, 1), 0)
+        item.quality += (coeff * 1 + (1 - coeff) * 2)
+        # if item.sell_in <= 0:
+        #     item.quality += 2
+        # else:
+        #     item.quality += 1
         item.quality = min(50, item.quality)
         item.sell_in -= 1
 
@@ -60,9 +64,11 @@ class ConjuredUpdater(AbstractUpdater):
 
     @staticmethod
     def tick(item):
-        if item.sell_in <= 0:
-            item.quality -= 4
-        else:
-            item.quality -= 2
+        coeff = max(min(item.sell_in, 1), 0)
+        item.quality -= (coeff * 2 + (1 - coeff) * 4)
+        # if item.sell_in <= 0:
+        #     item.quality -= 4
+        # else:
+        #     item.quality -= 2
         item.quality = max(0, item.quality)
         item.sell_in -= 1
