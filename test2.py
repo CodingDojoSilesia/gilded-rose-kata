@@ -7,7 +7,6 @@ class ItemEnum:
     BRIE = "Aged Brie"
     SULFRAS = "Sulfuras, Hand of Ragnaros"
     BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert"
-    Conjured = "Conjured"
 
 
 def test_normal_item_before_sell_date():
